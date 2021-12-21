@@ -435,25 +435,7 @@ public class Action extends TestBase {
 			return flag;
 		}
 
-		//@Override
-		public boolean mouseover(WebDriver driver, WebElement ele) {
-			boolean flag = false;
-			try {
-				new Actions(driver).moveToElement(ele).build().perform();
-				flag = true;
-				return true;
-			} catch (Exception e) {
-				return false;
-			} finally {
-				/*
-				 * if (flag) {
-				 * SuccessReport("MouseOver ","MouserOver Action is performed on \""+locatorName
-				 * +"\""); } else {
-				 * failureReport("MouseOver","MouseOver action is not performed on \""
-				 * +locatorName+"\""); }
-				 */
-			}
-		}
+		
 		//@Override
 		public boolean draggable(WebDriver driver,WebElement source, int x, int y) {
 			boolean flag = false;
@@ -770,7 +752,7 @@ public class Action extends TestBase {
 				e.getMessage();
 			}
 			// This new path for jenkins
-			String newImageString = "C:/Users/Vikesh/Vikesh_eclipse/TuduApplication/Screenshots/" + filename + "_"
+			String newImageString = "C:/Users/Vikesh/git/MYtudu/TuduApplication/Screenshots/" + filename + "_"
 					+ dateName + ".png";
 			return newImageString;
 		}

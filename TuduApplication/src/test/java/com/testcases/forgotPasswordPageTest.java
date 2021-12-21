@@ -3,12 +3,11 @@ package com.testcases;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.Logs.Log;
 import com.TestBase.TestBase;
 import com.TuduApp.pages.forgetPasswordPage;
 import com.TuduApp.pages.loginPage;
-import com.TuduApp.pages.signupPage;
+
 
 public class forgotPasswordPageTest extends TestBase {
 	
@@ -22,7 +21,7 @@ public class forgotPasswordPageTest extends TestBase {
 		
 	}
 	
-	@Test (dataProvider = "forgotPwd", dataProviderClass = forgetPasswordPage.class)
+	@Test (groups= {"vikesh2"},dataProvider = "forgotPwd", dataProviderClass = forgetPasswordPage.class)
 	public void forgotPwdWorkEmail(String WorkEmail) {
 		lp = new loginPage(driver);
 		lp.forgetPassword();

@@ -1,9 +1,8 @@
 package com.testcases;
 
+import org.testng.annotations.Test;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
 import com.Logs.Log;
 import com.TestBase.TestBase;
 import com.TuduApp.pages.loginPage;
@@ -32,7 +31,7 @@ public class signUpTest extends TestBase {
 	}
 
 		
-	@Test(dataProvider = "signup", dataProviderClass = signupPage.class)
+	@Test(groups= {"vikesh2"},dataProvider = "signup", dataProviderClass = signupPage.class)
 	
 		public void signUpDetails(String fName, String lName, String orgName, String claimUrl, String orgEmail,
 			String workEmail, String website, String signUpPassword) throws Throwable {

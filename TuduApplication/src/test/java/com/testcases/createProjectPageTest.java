@@ -1,10 +1,9 @@
 package com.testcases;
 
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
 import com.Logs.Log;
 import com.TestBase.TestBase;
 import com.TuduApp.pages.createProjectPage;
@@ -53,7 +52,7 @@ public class createProjectPageTest extends TestBase{
 
 	}
 
-	@Test(dataProvider = "createproject", dataProviderClass = createProjectPage.class)		
+	@Test(groups= {"vikesh1"},dataProvider = "createproject", dataProviderClass = createProjectPage.class)		
 	public void NewProject(String Pname, String Pdesc, String searchValue,String Ptype) throws Throwable {
 				
 		cp.validateProjectName(Pname);

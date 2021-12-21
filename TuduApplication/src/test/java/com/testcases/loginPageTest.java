@@ -1,16 +1,13 @@
 package com.testcases;
 
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 import com.Logs.Log;
 import com.TestBase.TestBase;
 import com.Tudu.ActionDriver.Action;
-import com.Tudu.utility.ExcelUtils;
 import com.TuduApp.pages.loginPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -31,7 +28,7 @@ public class loginPageTest extends TestBase {
 	Log.startTestCase("loginPageTest");
 	}
 		
-	@Test 
+	@Test (groups= {"vikesh2"})
 	public void Login_TC_001() throws Throwable {
 		
 		//report.createTest("loginPageTest");

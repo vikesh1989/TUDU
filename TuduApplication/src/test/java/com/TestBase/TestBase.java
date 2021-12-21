@@ -3,18 +3,14 @@
  */
 package com.TestBase;
 
-import java.io.File;
+import org.testng.annotations.AfterMethod;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
@@ -23,17 +19,12 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
-
 import com.Logs.Log;
 import com.Tudu.ActionDriver.Action;
-import com.Tudu.utility.ExcelUtils;
+
 import com.Tudu.utility.ExtentManager;
 //import com.Tudu.utility.log;
-import com.TuduApp.pages.signupPage;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -111,8 +102,7 @@ public class TestBase {
 			XSSFWorkbook workbook=new XSSFWorkbook(fis);
 			XSSFSheet sheet=workbook.getSheet(sheetName);
 			int rowcount=sheet.getPhysicalNumberOfRows();
-			//System.out.println(rowcount);
-			
+						
 			DataFormatter formatter = new DataFormatter();
 			String URL=formatter.formatCellValue(sheet.getRow(rownum).getCell(cellnum));
 					
@@ -147,6 +137,7 @@ public class TestBase {
 	 * }
 	 */
 	
+	@AfterMethod
 	@AfterSuite
 	
 	public void tearDown() {

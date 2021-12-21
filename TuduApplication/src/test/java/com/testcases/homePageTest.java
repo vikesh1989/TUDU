@@ -1,14 +1,13 @@
 package com.testcases;
 
+import org.testng.annotations.Test;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
 import com.Logs.Log;
 import com.TestBase.TestBase;
 import com.TuduApp.pages.homePage;
 import com.TuduApp.pages.loginPage;
-import com.TuduApp.pages.signupPage;
+
 
 public class homePageTest extends TestBase {
 
@@ -50,7 +49,7 @@ public class homePageTest extends TestBase {
 		System.out.println("Home Page URL is - " +createProjectURL);
 	}
 
-	@Test(dataProvider = "HeaderSearch", dataProviderClass = homePage.class)
+	@Test(groups= {"vikesh2"},dataProvider = "HeaderSearch", dataProviderClass = homePage.class)
 	public void homeHeaderSearchBar(String headerSearch) throws Throwable {
 		pageObj();
 		hp.ValidateWarningClose();

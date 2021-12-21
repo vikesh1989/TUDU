@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" >
-<listeners>
+<suite name="Suite">
+	<listeners>
 		<listener class-name="com.Tudu.utility.ListenerClass"></listener>
 	</listeners>
-  <test thread-count="1"  name="TUDU App Test">
-    <classes>
-      <class name="com.testcases.loginPageTest"/>
-          
-      </classes>
-  </test> <!-- TUDU App Test -->
+	<test thread-count="5" name="Test">
+
+		<groups>
+			<run>
+				<exclude name="vikesh1"></exclude>
+			</run>
+		</groups>
+		<classes>
+
+			<class name="com.testcases.loginPageTest" />
+			<class name="com.testcases.forgotPasswordPageTest" />
+			<class name="com.testcases.signUpTest" />
+			<class name="com.testcases.createProjectPageTest" />
+			<class name="com.testcases.homePageTest" />
+
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

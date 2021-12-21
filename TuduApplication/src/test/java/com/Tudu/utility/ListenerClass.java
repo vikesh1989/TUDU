@@ -1,6 +1,5 @@
 package com.Tudu.utility;
 
-import java.io.File;
 import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;

@@ -4,17 +4,27 @@
   <listeners>
     <listener class-name="com.Tudu.utility.ListenerClass"/>
   </listeners>
-  <test name="TUDU App Test(failed)">
+  <test name="Test(failed)">
+    <groups>
+      <run>
+        <exclude name="vikesh2"/>
+      </run>
+    </groups>
     <classes>
       <class name="com.testcases.loginPageTest">
         <methods>
-          <include name="Login_TC_001"/>
           <include name="tearDown"/>
           <include name="loadConfig"/>
-          <include name="setup"/>
-          <include name="teardown"/>
         </methods>
       </class> <!-- com.testcases.loginPageTest -->
+      <class name="com.testcases.createProjectPageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="teardown"/>
+          <include name="NewProject" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.testcases.createProjectPageTest -->
     </classes>
-  </test> <!-- TUDU App Test(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
