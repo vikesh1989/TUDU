@@ -15,7 +15,7 @@ public class ExtentManager {
 	
 	public static void setExtent() {
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-		htmlReporter= new ExtentHtmlReporter(System.getProperty("user.dir")+"/Reports/"+"TuduReport_"+ dateName +".html");
+		htmlReporter= new ExtentHtmlReporter(System.getProperty("user.dir")+"/Reports/"+"TuduReport.html");
 		htmlReporter.loadXMLConfig(System.getProperty("user.dir")+"/extent-config.xml");
 		
 		
