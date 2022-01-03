@@ -52,14 +52,12 @@ public class createProjectPageTest extends TestBase{
 
 	}
 
-	@Test(groups= {"vikesh1"},dataProvider = "createproject", dataProviderClass = createProjectPage.class)		
+	@Test(groups= {"vikesh2"},description="Verifing new project creation",dataProvider = "createproject", dataProviderClass = createProjectPage.class)		
 	public void NewProject(String Pname, String Pdesc, String searchValue,String Ptype) throws Throwable {
 				
 		cp.validateProjectName(Pname);
 		cp.validateProjectDescription(Pdesc);
-		cp.validateSelectMembers();
-		cp.validatselectMemberSearchValue(searchValue);
-		cp.validateselectMemberSearchFirstValue();
+		
 		cp.validateProjectType(Ptype);
 
 	}

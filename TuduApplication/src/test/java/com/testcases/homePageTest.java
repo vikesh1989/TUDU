@@ -49,7 +49,7 @@ public class homePageTest extends TestBase {
 		System.out.println("Home Page URL is - " +createProjectURL);
 	}
 
-	@Test(groups= {"vikesh2"},dataProvider = "HeaderSearch", dataProviderClass = homePage.class)
+	@Test(groups= {"vikesh2"},description="Verifing Header search",dataProvider = "HeaderSearch", dataProviderClass = homePage.class)
 	public void homeHeaderSearchBar(String headerSearch) throws Throwable {
 		pageObj();
 		hp.ValidateWarningClose();

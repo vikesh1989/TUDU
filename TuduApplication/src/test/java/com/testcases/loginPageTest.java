@@ -8,17 +8,21 @@ import org.testng.annotations.BeforeMethod;
 import com.Logs.Log;
 import com.TestBase.TestBase;
 import com.Tudu.ActionDriver.Action;
+import com.Tudu.utility.ExtentManager;
 import com.TuduApp.pages.loginPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class loginPageTest extends TestBase {
 	
+	//ExtentManager EM=new ExtentManager();
 	loginPage lp;
-	public ExtentHtmlReporter htmlReporter;
-	public ExtentReports extent;
 	public ExtentTest test;
+	//public ExtentHtmlReporter htmlReporter;
+	//public ExtentReports extent;
+	//public ExtentTest test;
 	
 	Action action=new Action();
 	
@@ -28,7 +32,7 @@ public class loginPageTest extends TestBase {
 	Log.startTestCase("loginPageTest");
 	}
 		
-	@Test (groups= {"vikesh2"})
+	@Test (groups= {"vikesh1"},description="verifying login with page title verification")
 	public void Login_TC_001() throws Throwable {
 		
 		//report.createTest("loginPageTest");
@@ -36,13 +40,14 @@ public class loginPageTest extends TestBase {
 		System.out.println("Launched Browser");
 				
 			Log.info("Ready to enter username and password");
+			test=this.test;
 			
 		lp = new loginPage(driver);
 			String uname=prop.getProperty("username");
 			String pwd=	prop.getProperty("password");
 					
 			lp.login(uname,pwd );
-			
+				
 		//driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
 			Thread.sleep(9000);
 			Log.info("Get Title of login page");

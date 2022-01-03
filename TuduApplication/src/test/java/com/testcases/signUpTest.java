@@ -31,7 +31,7 @@ public class signUpTest extends TestBase {
 	}
 
 		
-	@Test(groups= {"vikesh2"},dataProvider = "signup", dataProviderClass = signupPage.class)
+	@Test(groups= {"vikesh2"},description="Verifing sign up page details",dataProvider = "signup", dataProviderClass = signupPage.class)
 	
 		public void signUpDetails(String fName, String lName, String orgName, String claimUrl, String orgEmail,
 			String workEmail, String website, String signUpPassword) throws Throwable {

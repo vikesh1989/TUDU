@@ -23,12 +23,14 @@ public class ListenerClass extends ExtentManager implements ITestListener {
 	ExcelUtils util= new ExcelUtils();
 	
 	public void onTestStart(ITestResult result) {
-		test = extent.createTest(result.getName());
+		//test = extent.createTest(result.getName());
+		test = extent.createTest(result.getMethod().getDescription());
 	}
 
 	public void onTestSuccess(ITestResult result) {
 		if (result.getStatus() == ITestResult.SUCCESS) {
-		test.log(Status.PASS, "--  Pass Test case is: " + result.getName());
+		//test.log(Status.PASS, "--  Pass Test case is: " + result.getName());
+		test.log(Status.PASS, "--  Pass Test case is: " + result.getMethod().getDescription());
 			
 		}
 	}
@@ -37,7 +39,7 @@ public class ListenerClass extends ExtentManager implements ITestListener {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			try {
 				test.log(Status.FAIL,
-						MarkupHelper.createLabel(result.getName() + " - Test Case Failed", ExtentColor.RED));
+						MarkupHelper.createLabel( result.getMethod().getDescription() + " - Test Case Failed", ExtentColor.RED));
 				test.log(Status.FAIL,
 						MarkupHelper.createLabel(result.getThrowable() + " - Test Case Failed", ExtentColor.RED));
 				String imgPath = action.screenShot(TestBase.driver, result.getName());
@@ -53,7 +55,7 @@ public class ListenerClass extends ExtentManager implements ITestListener {
 
 	public void onTestSkipped(ITestResult result) {
 		if (result.getStatus() == ITestResult.SKIP) {
-			test.log(Status.SKIP, "Skipped Test case is: " + result.getName());
+			test.log(Status.SKIP, "Skipped Test case is: " +  result.getMethod().getDescription());
 		}
 	}
 

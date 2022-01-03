@@ -83,14 +83,15 @@ public class TestBase {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
+        
         Action act =new Action();
                 
         getCellDataString("URL", 1, 0);
         Log.info("selected navigated to application URL");
         
 		driver.manage().window().maximize();
-		Log.info("maximizing chrome window");
-		
+		Log.info("maximizing" +Launch+ "window");
+	
 		act.pageLoadTimeOut(driver, 5);
 	}
 	   

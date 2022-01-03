@@ -128,7 +128,7 @@ public class homePage extends TestBase{
 		
 		public void ValidateWarningClose() {
 			warningClose.click();
-			Log.info("Waring message of trial get closed");
+			Log.info("Waring pop up message of trial get closed");
 			
 		}
 		
