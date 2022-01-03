@@ -56,7 +56,7 @@ public class loginPageTest extends TestBase {
 		System.out.println(Title);
 		Log.info("Verifing Title ");
 		
-		Assert.assertEquals(Title, "TUDU1");
+		Assert.assertEquals(Title, "TUDU");
 		
 	}
 	

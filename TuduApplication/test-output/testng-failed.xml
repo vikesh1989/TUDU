@@ -7,24 +7,40 @@
   <test name="Test(failed)">
     <groups>
       <run>
-        <exclude name="vikesh2"/>
+        <exclude name="vikesh1"/>
       </run>
     </groups>
     <classes>
+      <class name="com.testcases.forgotPasswordPageTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.testcases.forgotPasswordPageTest -->
+      <class name="com.testcases.homePageTest">
+        <methods>
+          <include name="homeHeaderSearchBar" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.testcases.homePageTest -->
+      <class name="com.testcases.createProjectPageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="NewProject" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.testcases.createProjectPageTest -->
       <class name="com.testcases.loginPageTest">
         <methods>
-          <include name="tearDown"/>
           <include name="loadConfig"/>
         </methods>
       </class> <!-- com.testcases.loginPageTest -->
-      <class name="com.testcases.createProjectPageTest">
+      <class name="com.testcases.signUpTest">
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
           <include name="teardown"/>
-          <include name="NewProject" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.testcases.createProjectPageTest -->
+      </class> <!-- com.testcases.signUpTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
