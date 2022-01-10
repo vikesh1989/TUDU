@@ -4,7 +4,6 @@
 package com.TestBase;
 
 import org.testng.annotations.AfterMethod;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,10 +20,9 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import com.Logs.Log;
 import com.Tudu.ActionDriver.Action;
-
 import com.Tudu.utility.ExtentManager;
-//import com.Tudu.utility.log;
-
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -36,8 +34,8 @@ public class TestBase {
 	
 	public static Properties prop;
     public static WebDriver driver;
-   //public ExtentReports report;
-    //public ExtentTest test;
+   // public static ExtentReports report;
+    //public static ExtentTest test;
     
     
   @BeforeSuite
@@ -49,6 +47,7 @@ public class TestBase {
 	  DOMConfigurator.configure("log4j.xml");
 	 
 	  Log.info("Browser selected");
+	  
 	  
 		try {
 			prop = new Properties();
@@ -75,7 +74,9 @@ public class TestBase {
 		
         if(Launch.equalsIgnoreCase("chrome")){
 		  driver = new ChromeDriver();
-		  //log.info("chrome browser open");
+		 
+		 Log.info(Launch +" browser open");
+		 
 		}else if(Launch.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
@@ -88,11 +89,13 @@ public class TestBase {
                 
         getCellDataString("URL", 1, 0);
         Log.info("selected navigated to application URL");
-        
+       
 		driver.manage().window().maximize();
 		Log.info("maximizing" +Launch+ "window");
 	
 		act.pageLoadTimeOut(driver, 5);
+		
+		driver.manage().deleteAllCookies();
 	}
 	   
 	  public void getCellDataString(String sheetName,int rownum,int cellnum) {
@@ -111,7 +114,7 @@ public class TestBase {
 			driver.get(URL);
 					
     	} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.getMessage();
 			e.printStackTrace();
 		}

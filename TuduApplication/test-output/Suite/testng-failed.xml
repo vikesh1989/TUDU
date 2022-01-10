@@ -11,27 +11,34 @@
       </run>
     </groups>
     <classes>
-      <class name="com.testcases.forgotPasswordPageTest">
+      <class name="com.testcases.confirmPasswordPageTest">
         <methods>
-          <include name="teardown"/>
           <include name="tearDown"/>
+          <include name="teardown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.testcases.forgotPasswordPageTest -->
+      </class> <!-- com.testcases.confirmPasswordPageTest -->
       <class name="com.testcases.homePageTest">
         <methods>
-          <include name="homeHeaderSearchBar" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="teardown"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- com.testcases.homePageTest -->
       <class name="com.testcases.createProjectPageTest">
         <methods>
           <include name="setup"/>
-          <include name="NewProject" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="teardown"/>
         </methods>
       </class> <!-- com.testcases.createProjectPageTest -->
       <class name="com.testcases.loginPageTest">
         <methods>
+          <include name="Login_TC_001"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
           <include name="loadConfig"/>
+          <include name="teardown"/>
         </methods>
       </class> <!-- com.testcases.loginPageTest -->
       <class name="com.testcases.signUpTest">

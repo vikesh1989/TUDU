@@ -31,7 +31,7 @@ public class signUpTest extends TestBase {
 	}
 
 		
-	@Test(groups= {"vikesh2"},description="Verifing sign up page details",dataProvider = "signup", dataProviderClass = signupPage.class)
+	@Test(priority=0,groups= {"vikesh2"},description="Verifing sign up page details",dataProvider = "signup", dataProviderClass = signupPage.class)
 	
 		public void signUpDetails(String fName, String lName, String orgName, String claimUrl, String orgEmail,
 			String workEmail, String website, String signUpPassword) throws Throwable {
@@ -44,6 +44,9 @@ public class signUpTest extends TestBase {
 		 su.signUpWorkEmail(workEmail); 
 		 su.signUpwebsiteUrl(website);
 		 su.signUpPassword(signUpPassword);
+		 Thread.sleep(3000);
+		 su.createMyAccount();
+		 Thread.sleep(2000);
 		 
 		}
 	

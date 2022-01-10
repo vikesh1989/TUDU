@@ -18,6 +18,7 @@
 			<class name="com.testcases.signUpTest" />
 			<class name="com.testcases.createProjectPageTest" />
 			<class name="com.testcases.homePageTest" />
+			<class name="com.testcases.confirmPasswordPageTest" />
 
 		</classes>
 	</test> <!-- Test -->

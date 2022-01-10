@@ -46,7 +46,7 @@ public class loginPage extends TestBase {
 		Log.info("Username Entered");
 		password.clear();
 		password.sendKeys(pwd);
-		Log.info("Username Entered");
+		Log.info("Password Entered");
 				
 		submitButton.click();
 		Log.info("Cliked on submit button");

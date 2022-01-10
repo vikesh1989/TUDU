@@ -18,13 +18,13 @@
           <include name="setup"/>
         </methods>
       </class> <!-- com.testcases.homePageTest -->
-      <class name="com.testcases.forgotPasswordPageTest">
+      <class name="com.testcases.createProjectPageTest">
         <methods>
-          <include name="teardown"/>
-          <include name="tearDown"/>
           <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- com.testcases.forgotPasswordPageTest -->
+      </class> <!-- com.testcases.createProjectPageTest -->
       <class name="com.testcases.loginPageTest">
         <methods>
           <include name="Login_TC_001"/>
@@ -41,6 +41,13 @@
           <include name="teardown"/>
         </methods>
       </class> <!-- com.testcases.signUpTest -->
+      <class name="com.testcases.confirmPasswordPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.testcases.confirmPasswordPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

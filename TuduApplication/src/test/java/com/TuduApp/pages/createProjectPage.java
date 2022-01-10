@@ -1,17 +1,27 @@
 package com.TuduApp.pages;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.DataProvider;
-
 import com.Logs.Log;
 import com.TestBase.TestBase;
-import com.Tudu.utility.ExcelUtils;
+
 
 public class createProjectPage extends TestBase{
 	
+	public static Workbook  book;
+	public static Sheet  sheet;
+
 	@FindBy (xpath="//input[@formcontrolname='projectName']")
 	WebElement projectName;
 	
@@ -36,7 +46,7 @@ public class createProjectPage extends TestBase{
 	@FindBy (xpath="//mat-select[@placeholder='Project Manager/Owner*']") //click as dropdown
 	WebElement projectManagerOwner;
 		
-		@FindBy (xpath="//mat-option[@class='mat-option ng-star-inserted'][1]") //first dropdown value
+		@FindBy (xpath="//mat-option[@class='mat-option ng-star-inserted'][2]") //first dropdown value
 		WebElement projectManagerOwnerSelect;
 	
 	@FindBy (xpath="//div[@class='multiselect-dropdown']/div/span") //Click with checkbox
@@ -150,9 +160,47 @@ public class createProjectPage extends TestBase{
 	}
 	
 	@DataProvider(name="createproject")
-	public static Object[][] getsignUpData() {
-		Object data[][] =ExcelUtils.getRegisterData("CreateProject");
+	public static Object[][] CreateProjectData() {
+		Object data[][] =getRegisterData("CreateProject");
 		return data;
+	}	
+	
+	public static String Register_Data_File="C:\\Users\\Vikesh\\git\\MYtudu\\TuduApplication\\TestData\\NewProject.xlsx";
+	
+	
+	public static Object[][] getRegisterData(String SheetName) {
+		FileInputStream file=null;
+	    
+		try {
+			file=new FileInputStream(Register_Data_File);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			
+			book=WorkbookFactory.create(file);
+		} catch (EncryptedDocumentException e) {
+			
+			e.printStackTrace();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		System.out.println("Data Reading");
+		sheet=book.getSheet(SheetName);
+		Object data[][]= new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
+		
+		for(int i=0;i<sheet.getLastRowNum();i++) {
+			for(int j=0;j<sheet.getRow(0).getLastCellNum();j++) {
+				data[i][j]=sheet.getRow(i+1).getCell(j).toString();
+				
+				//System.out.println(data[i][j]);
+				
+			}			
+		}
+		return data;
+		
 	}	
 	
 }

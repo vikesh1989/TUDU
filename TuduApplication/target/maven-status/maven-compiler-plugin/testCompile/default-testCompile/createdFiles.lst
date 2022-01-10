@@ -6,11 +6,13 @@ com\testcases\signUpTest.class
 com\Tudu\utility\ListenerClass.class
 com\TuduApp\pages\createProjectPage.class
 com\TuduApp\pages\signupPage.class
+com\TuduApp\pages\confirmPasswordPage.class
 com\Tudu\utility\ExtentManager.class
 com\Tudu\utility\ExcelUtils.class
 com\testcases\homePageTest.class
 com\testcases\createProjectPageTest.class
 com\TuduApp\pages\loginPage.class
+com\testcases\confirmPasswordPageTest.class
 com\Tudu\utility\readExcelData.class
 com\testcases\loginPageTest.class
 com\TuduApp\pages\homePage.class

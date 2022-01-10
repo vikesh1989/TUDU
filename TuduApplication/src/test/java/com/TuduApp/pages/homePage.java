@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
 
 import com.Logs.Log;
@@ -139,10 +141,20 @@ public class homePage extends TestBase{
 		 * 
 		} */
 		
+		public void displayCtreatebutton() {			
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			wait.until(ExpectedConditions.visibilityOfAllElements(warningClose));
+			Log.info("Waring close button is visible" );	
+		}
 		public void validateSearchProject(String search) {
 			
 			searchProject.sendKeys(search);
 			Log.info("entered value on project search bar");
+		}
+		@DataProvider(name="searchProject")
+		public static Object[][] getsignUpData() {
+			Object data[][] =ExcelUtils.getRegisterData("searchProject");
+			return data;
 		}
 		
 		public void validateCreateProject() {			
@@ -150,11 +162,10 @@ public class homePage extends TestBase{
 			Log.info("Create project page open");
 		}
 		
-		@DataProvider(name="HeaderSearch")
-		public static Object[][] getsignUpData() {
-			Object data[][] =ExcelUtils.getRegisterData("HeaderSearch");
-			return data;
-		}
+		/*
+		 * @DataProvider(name="HeaderSearch") public static Object[][] getsignUpData() {
+		 * Object data[][] =ExcelUtils.getRegisterData("HeaderSearch"); return data; }
+		 */
 		
 		public void validateheaderSearchBar(String search) {
 			

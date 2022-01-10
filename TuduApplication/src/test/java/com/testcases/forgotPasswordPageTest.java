@@ -21,7 +21,7 @@ public class forgotPasswordPageTest extends TestBase {
 		
 	}
 	
-	@Test (groups= {"vikesh2"},description="Verifing forgot password details",dataProvider = "forgotPwd", dataProviderClass = forgetPasswordPage.class)
+	@Test (groups= {"vikesh1"},description="Verifing forgot password details",dataProvider = "forgotPwd", dataProviderClass = forgetPasswordPage.class)
 	public void forgotPwdWorkEmail(String WorkEmail) {
 		lp = new loginPage(driver);
 		lp.forgetPassword();

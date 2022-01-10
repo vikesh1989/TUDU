@@ -8,12 +8,10 @@ import org.testng.annotations.BeforeMethod;
 import com.Logs.Log;
 import com.TestBase.TestBase;
 import com.Tudu.ActionDriver.Action;
-import com.Tudu.utility.ExtentManager;
 import com.TuduApp.pages.loginPage;
-import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+
 
 public class loginPageTest extends TestBase {
 	
@@ -32,7 +30,7 @@ public class loginPageTest extends TestBase {
 	Log.startTestCase("loginPageTest");
 	}
 		
-	@Test (groups= {"vikesh1"},description="verifying login with page title verification")
+	@Test (priority=1,groups= {"vikesh2"},description="verifying login with page title verification")
 	public void Login_TC_001() throws Throwable {
 		
 		//report.createTest("loginPageTest");
@@ -40,8 +38,7 @@ public class loginPageTest extends TestBase {
 		System.out.println("Launched Browser");
 				
 			Log.info("Ready to enter username and password");
-			test=this.test;
-			
+						
 		lp = new loginPage(driver);
 			String uname=prop.getProperty("username");
 			String pwd=	prop.getProperty("password");
@@ -56,7 +53,8 @@ public class loginPageTest extends TestBase {
 		System.out.println(Title);
 		Log.info("Verifing Title ");
 		
-		Assert.assertEquals(Title, "TUDU");
+		Assert.assertEquals(Title, "TUDU1");
+		Thread.sleep(2000);
 		
 	}
 	

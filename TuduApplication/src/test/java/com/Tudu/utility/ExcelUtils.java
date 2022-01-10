@@ -9,6 +9,8 @@ import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -38,6 +40,7 @@ public class ExcelUtils extends TestBase {
 			e.printStackTrace();
 		}
 		try {
+			
 			book=WorkbookFactory.create(file);
 		} catch (EncryptedDocumentException e) {
 			
@@ -54,10 +57,12 @@ public class ExcelUtils extends TestBase {
 			for(int j=0;j<sheet.getRow(0).getLastCellNum();j++) {
 				data[i][j]=sheet.getRow(i+1).getCell(j).toString();
 				
-				//System.out.println(data[i][j]);				
+				//System.out.println(data[i][j]);
+				
 			}			
 		}
 		return data;
+		
 	}		
 	
 	public void pageObj() throws Throwable {
@@ -99,6 +104,22 @@ public class ExcelUtils extends TestBase {
 		return path;
 	}
 	
+	  public void getExcelStringdata(String sheetName,int rownum,int cellnum) {
+	    	
+	    	try {
+	    		
+	    		FileInputStream fis=new FileInputStream("C:\\Users\\Vikesh\\Vikesh_eclipse\\TuduApplication\\TestData\\Business configuration.xlsx");
+				XSSFWorkbook workbook=new XSSFWorkbook(fis);
+				XSSFSheet sheet=workbook.getSheet(sheetName);
+				int rowcount=sheet.getPhysicalNumberOfRows();
+											
+	    	} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.getMessage();
+				e.printStackTrace();
+			}
+				
+	    }
 	 				
 }
 

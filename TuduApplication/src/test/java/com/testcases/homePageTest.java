@@ -23,21 +23,16 @@ public class homePageTest extends TestBase {
 	public void pageObj() throws Throwable {
 		lp=new loginPage(driver);
 		lp.login(prop.getProperty("username"), prop.getProperty("password"));
-		//driver.manage().timeouts().pageLoadTimeout(10,)	
+		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);	
 		hp=new homePage(driver);
+		hp.displayCtreatebutton();
 
 	}
-	@Test(enabled=false)
+	@Test(priority=3,groups= {"vikesh2"},description="Verifing project search feature",dataProvider = "searchProject", dataProviderClass = homePage.class)
 	public void homeSearchProject(String searchProject) throws Throwable {
-
-		lp=new loginPage(driver);
-		lp.login(prop.getProperty("username"), prop.getProperty("password"));
-
-		hp=new homePage(driver);
-
+		pageObj();
 		hp.validateSearchProject(searchProject);
-		String homePageURL=driver.getCurrentUrl();
-		System.out.println("Home Page URL is - " +homePageURL);
+		Thread.sleep(3000);
 	}
 
 	@Test(enabled=false)
@@ -49,15 +44,16 @@ public class homePageTest extends TestBase {
 		System.out.println("Home Page URL is - " +createProjectURL);
 	}
 
-	@Test(groups= {"vikesh2"},description="Verifing Header search",dataProvider = "HeaderSearch", dataProviderClass = homePage.class)
+	@Test(enabled=false,groups= {"vikesh2"},description="Verifing Header search",dataProvider = "HeaderSearch", dataProviderClass = homePage.class)
 	public void homeHeaderSearchBar(String headerSearch) throws Throwable {
 		pageObj();
 		hp.ValidateWarningClose();
 		hp.validateheaderSearchBar(headerSearch);
+		
 
 	}
 	/*
-	 * @Test 
+	 * @Test(enabled=false)
 	 * public void homeQuickSearch() throws Throwable { 
 	 * pageObj();
 	 * 
@@ -67,7 +63,7 @@ public class homePageTest extends TestBase {
 	 * }
 	 */
 
-	@Test	(enabled=false)
+	@Test(enabled=false)
 	public void homeAddQuickCreatebtn() throws Throwable {
 
 		pageObj();
@@ -129,6 +125,17 @@ public class homePageTest extends TestBase {
 		hp.validateUserProfile();
 		Thread.sleep(3000);
 		hp.validateUserProfileChangePassword();
+	}
+	
+	@Test(priority=2,groups= {"vikesh2"},description="Verifing Logout functionality")
+	public void homeUserProfileLogout() throws Throwable {
+		pageObj();
+		hp.ValidateWarningClose();
+		hp.validateUserProfile();
+		Thread.sleep(3000);
+		hp.validateUserProfileLogout();
+		Thread.sleep(2000);
+		
 	}
 	
 	@AfterMethod

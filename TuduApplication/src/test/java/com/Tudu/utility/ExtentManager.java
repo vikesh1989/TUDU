@@ -2,8 +2,6 @@ package com.Tudu.utility;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import com.TestBase.TestBase;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -29,6 +27,7 @@ public class ExtentManager{
 		extent.setSystemInfo("Tester", "Vikesh");
 		extent.setSystemInfo("OS", "Win10");
 		extent.setSystemInfo("Browser", "Chrome");
+		
 	}
 	public static void endReport() {
 		extent.flush();

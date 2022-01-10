@@ -1,46 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <listeners>
-    <listener class-name="com.Tudu.utility.ListenerClass"/>
-  </listeners>
-  <test name="Test(failed)">
-    <groups>
-      <run>
-        <exclude name="vikesh1"/>
-      </run>
-    </groups>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.testcases.forgotPasswordPageTest">
-        <methods>
-          <include name="teardown"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.testcases.forgotPasswordPageTest -->
-      <class name="com.testcases.homePageTest">
-        <methods>
-          <include name="homeHeaderSearchBar" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.testcases.homePageTest -->
-      <class name="com.testcases.createProjectPageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="NewProject" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.testcases.createProjectPageTest -->
       <class name="com.testcases.loginPageTest">
         <methods>
-          <include name="loadConfig"/>
-        </methods>
-      </class> <!-- com.testcases.loginPageTest -->
-      <class name="com.testcases.signUpTest">
-        <methods>
-          <include name="setup"/>
+          <include name="Login_TC_001"/>
           <include name="tearDown"/>
+          <include name="loadConfig"/>
+          <include name="setup"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.testcases.signUpTest -->
+      </class> <!-- com.testcases.loginPageTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
