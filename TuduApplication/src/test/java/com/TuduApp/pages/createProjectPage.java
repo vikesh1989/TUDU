@@ -49,13 +49,16 @@ public class createProjectPage extends TestBase{
 		@FindBy (xpath="//mat-option[@class='mat-option ng-star-inserted'][2]") //first dropdown value
 		WebElement projectManagerOwnerSelect;
 	
-	@FindBy (xpath="//div[@class='multiselect-dropdown']/div/span") //Click with checkbox
+	//@FindBy (xpath="//div[@class='multiselect-dropdown']/div/span") //Click with checkbox
+	@FindBy (xpath="//div[@class=\"cuppa-dropdown\"]//div")
 	WebElement selectMembers;
 	
-		@FindBy (xpath="//li[@class='filter-textbox ng-star-inserted']/input") //checkbox value search
+		//@FindBy (xpath="//li[@class='filter-textbox ng-star-inserted']/input") //checkbox value search
+		@FindBy (xpath="//div[@class='list-filter ng-star-inserted']/input")
 		WebElement selectMembersSearchValue;
 	
-		@FindBy (xpath="//li[@class='multiselect-item-checkbox ng-star-inserted']") //first checkbox value select
+		//@FindBy (xpath="//li[@class='multiselect-item-checkbox ng-star-inserted']") //first checkbox value select
+		@FindBy (xpath="//li[@class='pure-checkbox ng-star-inserted']")
 		WebElement selectMembersSearchFirstValue;
 		
 	@FindBy (xpath="//span[text()='Invite New User']") 

@@ -69,8 +69,8 @@ public class createProjectPageTest extends TestBase{
 		Thread.sleep(2000);
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,600)", "");
-		Thread.sleep(5000);
+		js.executeScript("window.scrollBy(0,800)", "");
+		Thread.sleep(2000);
 		
 		cp.validateSelectMembers();
 		cp.validatselectMemberSearchValue(searchValue);
@@ -81,7 +81,7 @@ public class createProjectPageTest extends TestBase{
 		cp.validateDepartmentCostCenterValue();
 		Thread.sleep(2000);
 		cp.validateAddProjectBtn();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 	}
 	
 	@AfterMethod

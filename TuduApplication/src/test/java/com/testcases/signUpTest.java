@@ -12,7 +12,7 @@ public class signUpTest extends TestBase {
 
 	loginPage lp;
 	signupPage su;
-	
+
 
 	@BeforeMethod
 	public void setup() throws Throwable {
@@ -25,36 +25,36 @@ public class signUpTest extends TestBase {
 	public void pageObj() throws Throwable {
 		lp = new loginPage(driver);
 		lp.signUp();
-		
+
 		su = new signupPage(driver);
-	
+
 	}
 
-		
+
 	@Test(priority=0,groups= {"vikesh2"},description="Verifing sign up page details",dataProvider = "signup", dataProviderClass = signupPage.class)
-	
-		public void signUpDetails(String fName, String lName, String orgName, String claimUrl, String orgEmail,
+
+	public void signUpDetails(String fName, String lName, String orgName, String claimUrl, String orgEmail,
 			String workEmail, String website, String signUpPassword) throws Throwable {
-		 	 
-		 su.signUpFirstName(fName);	
-		 su.signUpLastName(lName);
-		 su.signUporganizationName(orgName);
-		 su.signUpclaimYourUrl(claimUrl); 
-		 su.signUporganizationEmail(orgEmail);
-		 su.signUpWorkEmail(workEmail); 
-		 su.signUpwebsiteUrl(website);
-		 su.signUpPassword(signUpPassword);
-		 Thread.sleep(3000);
-		 su.createMyAccount();
-		 Thread.sleep(2000);
-		 
-		}
-	
+
+		su.signUpFirstName(fName);	
+		su.signUpLastName(lName);
+		su.signUporganizationName(orgName);
+		su.signUpclaimYourUrl(claimUrl); 
+		su.signUporganizationEmail(orgEmail);
+		su.signUpWorkEmail(workEmail); 
+		su.signUpwebsiteUrl(website);
+		su.signUpPassword(signUpPassword);
+		Thread.sleep(2000);
+		su.createMyAccount();
+		Thread.sleep(8000);
+
+	}
+
 	@AfterMethod
 	public void teardown() {
 		Log.endTestCase("signUpTest");
 		driver.close();
 	}
 
-	
+
 }

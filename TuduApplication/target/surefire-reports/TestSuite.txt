@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: TestSuite
--------------------------------------------------------------------------------
-Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 191.89 s <<< FAILURE! - in TestSuite
-com.testcases.loginPageTest.Login_TC_001  Time elapsed: 17.531 s  <<< FAILURE!
-java.lang.AssertionError: expected [TUDU1] but found [TUDU]
-	at com.testcases.loginPageTest.Login_TC_001(loginPageTest.java:59)
-
